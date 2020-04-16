@@ -9,6 +9,6 @@ RUN pip uninstall -y --no-cache-dir ansible
 # gcc               : requirement to install psutil (Ansible) with Python 3
 # gcc-python3-plugin: requirement to compile psutil by Python 3
 # which             : requirement to run pipenv install --system --deploy
+# * Ansible Runner depends on psutil
 RUN yum install -y sshpass python3-devel gcc gcc-python3-plugin which && yum clean all
-# psutil: @see https://github.com/giampaolo/psutil/issues/1143#issuecomment-406513376
 RUN pip3 install --no-cache-dir pipenv ansible ansible-runner
